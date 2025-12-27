@@ -1,0 +1,31 @@
+[profile.default]
+# Solidity 编译器版本
+solc = "0.8.20"
+
+# 启用优化器（生产推荐）
+optimizer = true
+optimizer_runs = 200
+
+# 关键：输出 storageLayout，用于 storage 冲突检测
+extra_output = ["storageLayout"]
+
+# EVM 版本（与主流 L2 / 主网兼容）
+evm_version = "paris"
+
+# 测试相关
+verbosity = 2
+fs_permissions = [
+  { access = "read", path = "./out" },
+  { access = "read", path = "./scripts" }
+]
+
+# gas 报告（可选，面试/评审很加分）
+gas_reports = ["*"]
+
+# 缓存与输出目录（默认即可，显式写出更清晰）
+out = "out"
+cache_path = "cache"
+libs = ["lib"]
+src = "src"
+test = "test"
+script = "scripts"
